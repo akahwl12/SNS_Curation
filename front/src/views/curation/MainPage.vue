@@ -104,16 +104,21 @@
             },
             getPropsNick(propsNick) {
                 if(this.$store.state.userinfo!=null){
-                this.nickname = this.$store.state.userinfo.nickName;
-            }
-                this.propsNickname = propsNick
-                this.menu.isNavi = false;
-                this.menu.isHome = false;
-                this.menu.isAdd = false;
-                this.menu.isProfile = false;
-                this.menu.isAlarm = false;
-                this.menu.isSearch = false;
-                this.menu.isUserProfile = true;
+                    this.nickname = this.$store.state.userinfo.nickName;
+                }
+                if(propsNick==this.nickname) {
+                    this.clickProfile();
+                }
+                else {
+                    this.propsNickname = propsNick
+                    this.menu.isNavi = false;
+                    this.menu.isHome = false;
+                    this.menu.isAdd = false;
+                    this.menu.isProfile = false;
+                    this.menu.isAlarm = false;
+                    this.menu.isSearch = false;
+                    this.menu.isUserProfile = true;
+                }
             },
             clickNavi() {
                 if(this.$store.state.userinfo!=null){
